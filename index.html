@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSES Connect® | 24×7 Electrical Services Delhi NCR & Pan-India</title>
+    <meta name="description" content="HSES Connect® - Trusted Electricians in Delhi NCR since 2012. MSME Registered & Govt. Verified. Emergency repairs, wiring, smart home automation, commercial services. 4.9★ Rating, 30,000+ Customers.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1C2B4A;
+            --accent: #FFB800;
+            --light: #F5F7FA;
+            --white: #FFFFFF;
+            --dark: #0F1419;
+            --border: #E0E4E8;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        nav {
+            display: none;
+        }
+
+        nav.active {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+                position: static;
+                background: none;
+                flex-direction: row;
+                padding: 0;
+                gap: 2rem;
+                box-shadow: none;
+            }
+
+            nav a {
+                border-bottom: none;
+                padding: 0;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #253952 100%);
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,184,0,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--light);
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        section h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        section h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--border);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(31, 43, 74, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .info-section h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .info-section p {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-section li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .info-section li:before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pricing-table th {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .pricing-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table tbody tr:hover {
+            background: var(--light);
+        }
+
+        .pricing-table tr:nth-child(even) {
+            background: rgba(245, 247, 250, 0.5);
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .column {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-stars {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: var(--white);
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,184,0,0.3);
+        }
+
+        .contact-method .icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method h4 {
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .contact-method a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--light);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            background: #E8ECEF;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 1rem;
+            color: var(--text-dark);
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #0A1015;
+            color: #AAA;
+            padding: 3rem 1rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #AAA;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+            margin: 0.25rem;
+        }
+
+        .badge.accent {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .pricing-table {
+                font-size: 0.9rem;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card,
+        .testimonial,
+        .info-section {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Disclaimer Box */
+        .disclaimer {
+            background: #FFF8E1;
+            border-left: 4px solid #FFB800;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .disclaimer h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer ul {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 1rem;
+        }
+
+        .disclaimer li {
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .disclaimer li:before {
+            content: "❌ ";
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>⚡</span>
+                HSES Connect<span>®</span>
+            </div>
+            <nav id="navMenu">
+                <a href="#home" onclick="closeMenu()">Home</a>
+                <a href="#services" onclick="closeMenu()">Services</a>
+                <a href="#pricing" onclick="closeMenu()">Pricing</a>
+                <a href="#about" onclick="closeMenu()">About</a>
+                <a href="#reviews" onclick="closeMenu()">Reviews</a>
+                <a href="#faq" onclick="closeMenu()">FAQ</a>
+                <a href="#contact" onclick="closeMenu()">Contact</a>
+            </nav>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>24×7 Electrical Services<br><span style="color: var(--accent);">Delhi NCR & Pan-India</span></h1>
+        <p style="margin-bottom: 2rem;">MSME Registered & Govt. Verified | Powering Trust Since 2012 ⚡</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Book a Service</a>
+            <a href="#services" class="btn btn-secondary">Emergency Services</a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats container">
+        <div class="stat-item">
+            <h3>30,000+</h3>
+            <p>Happy Customers</p>
+        </div>
+        <div class="stat-item">
+            <h3>2-Hour</h3>
+            <p>Response Time</p>
+        </div>
+        <div class="stat-item">
+            <h3>4.9/5</h3>
+            <p>Customer Rating</p>
+        </div>
+        <div class="stat-item">
+            <h3>1 Year</h3>
+            <p>Warranty</p>
+        </div>
+        <div class="stat-item">
+            <h3>50+</h3>
+            <p>Certified Electricians</p>
+        </div>
+        <div class="stat-item">
+            <h3>14+</h3>
+            <p>Years Experience</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Core Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Fan Repair & Installation</h3>
+                    <p>Ceiling, exhaust, and pedestal fan services with professional installation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Wiring & Rewiring</h3>
+                    <p>Complete home and office wiring, rewiring, and electrical panel upgrades.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>MCB & Fuse Box</h3>
+                    <p>MCB installation, fuse box repair, and circuit breaker safety upgrades.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Smart Home Automation</h3>
+                    <p>Smart switches, lights, voice control, and complete home automation setup.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Services</h3>
+                    <p>Office, retail, and industrial electrical solutions with AMC support.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>All Other Services</h3>
+                    <p>Emergency repairs, solar installation, CCTV setup, and more specialized services.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Why Choose HSES™?</h3>
+                <div class="info-section">
+                    <h3 style="margin-top: 0; color: var(--accent);">✓ The Complete HSES Edge</h3>
+                    <ul style="margin-top: 1rem;">
+                        <li>Verified & Safe Work Only - Government-registered professionals using certified materials</li>
+                        <li>Experienced Certified Team - 14+ years expertise with UDYAM verification</li>
+                        <li>Upfront Pricing — Zero Hidden Charges - Transparent cost estimation</li>
+                        <li>On-Time, Every Time — Guaranteed - Emergency response 30-60 minutes</li>
+                        <li>1-Year Warranty - Peace of mind on all services</li>
+                        <li>Available 24/7 - Round-the-clock emergency support</li>
+                        <li>50+ Certified Electricians - Trained professionals across Delhi-NCR</li>
+                        <li>Pan-India Service Network - Extended reach for large projects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing">
+            <h2>Our Service Rate Card</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Transparent Pricing | No Hidden Charges</p>
+
+            <h3>Residential Electrical Services</h3>
+            
+            <h4>Basic Home Services</h4>
+            <div style="overflow-x: auto;">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fan installation/replacement</td>
+                            <td>₹250 – ₹400</td>
+                        </tr>
+                        <tr>
+                            <td>Light/LED fitting (per point)</td>
+                            <td>₹150 – ₹500</td>
+                        </tr>
+                        <tr>
+                            <td>Switch/socket repair or replacement</td>
+                            <td>₹150 – ₹300</td>
+                        </tr>
+                        <tr>
+                            <td>Ceiling rose/holder fitting</td>
+                            <td>₹150 – ₹250</td>
+                        </tr>
+                        <tr>
+                            <td>Tube light/batten installation</td>
+                            <td>₹200 – ₹400</td>
+                        </tr>
+                        <tr>
+                            <td>Chandelier/decorative light fitting</td>
+                            <td>₹500 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>Exhaust fan installation</td>
+                            <td>₹300 – ₹600</td>
+                        </tr>
+                        <tr>
+                            <td>Doorbell installation/repair</td>
+                            <td>₹200 – ₹400</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Fault Finding & Repair</h4>
+            <div style="overflow-x: auto;">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Electrical fault diagnosis (basic)</td>
+                            <td>₹300 – ₹600</td>
+                        </tr>
+                        <tr>
+                            <td>Short circuit identification & repair</td>
+                            <td>Inspection based*</td>
+                        </tr>
+                        <tr>
+                            <td>MCB tripping issue resolution</td>
+                            <td>₹300 – ₹600</td>
+                        </tr>
+                        <tr>
+                            <td>Loose wiring/connection tightening</td>
+                            <td>₹300 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>Power fluctuation troubleshooting</td>
+                            <td>₹400 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>Earthing/leakage testing</td>
+                            <td>₹500 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>Emergency electrical repair</td>
+                            <td>Call charges extra</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Wiring & Rewiring</h4>
+            <div style="overflow-x: auto;">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>New house wiring (per sq. ft.)</td>
+                            <td>₹30 – ₹50</td>
+                        </tr>
+                        <tr>
+                            <td>Complete rewiring (per sq. ft.)</td>
+                            <td>₹40 – ₹60</td>
+                        </tr>
+                        <tr>
+                            <td>Concealed conduit work</td>
+                            <td>Inspection based*</td>
+                        </tr>
+                        <tr>
+                            <td>Surface conduit work</td>
+                            <td>Inspection based*</td>
+                        </tr>
+                        <tr>
+                            <td>Additional point installation</td>
+                            <td>₹400 – ₹800</td>
+                        </tr>
+                        <tr>
+                            <td>Kitchen/bathroom wiring</td>
+                            <td>₹800 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>Outdoor/garden lighting wiring</td>
+                            <td>Inspection based*</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Power Backup Solutions</h4>
+            <div style="overflow-x: auto;">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inverter installation</td>
+                            <td>₹1,500 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>Battery connection/replacement</td>
+                            <td>Inspection based*</td>
+                        </tr>
+                        <tr>
+                            <td>UPS installation (home/office)</td>
+                            <td>₹1,000 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>MCB/DB box installation</td>
+                            <td>₹500 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>Panel/load distribution work</td>
+                            <td>Inspection based*</td>
+                        </tr>
+                        <tr>
+                            <td>ELCB/RCCB installation</td>
+                            <td>₹600 onwards</td>
+                        </tr>
+                        <tr>
+                            <td>Stabilizer installation</td>
+                            <td>₹300 – ₹600</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-section" style="margin-top: 2rem;">
+                <h3 style="margin-top: 0;">Important Pricing Information</h3>
+                <ul>
+                    <li>All rates are service charges only</li>
+                    <li>Electrical materials charged separately</li>
+                    <li>*Inspection based prices confirmed after site visit</li>
+                    <li>Mandatory visiting charge (₹300) for inspection and diagnosis</li>
+                    <li>NO advance payment required</li>
+                    <li>Pay only after work completion</li>
+                    <li>Accepted: Cash, UPI, Card</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Annual Maintenance Contracts (AMC)</h3>
+            <div class="info-section">
+                <p>Ensure your electrical systems are always in top condition with our comprehensive AMC plans. Get preventive maintenance, priority support, and significant cost savings for your home, office, or factory.</p>
+                <ul>
+                    <li>Regular preventive maintenance visits</li>
+                    <li>Priority customer support</li>
+                    <li>Discounted service rates</li>
+                    <li>Emergency response priority</li>
+                    <li>Customized packages for homes, offices, and industries</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About HSES Connect®</h2>
+            <h3>Our Story</h3>
+            <div class="info-section">
+                <p><strong>Hasan Smart Electrical Solutions®</strong> - HSES Connect® - was founded in 2012 on a simple principle: the electrical services industry deserves professionalism, honesty, and an unwavering commitment to safety. In a market often compromised by shortcuts and hidden charges, we set a new standard.</p>
+                <blockquote style="border-left: 4px solid var(--accent); padding-left: 1rem; margin: 1.5rem 0; color: var(--primary); font-weight: 500;">
+                    "We don't believe in cheap work. We believe in correct work."
+                </blockquote>
+                <ul style="margin-top: 1rem;">
+                    <li>13+ years of industry experience</li>
+                    <li>MSME Registered & Government Verified</li>
+                    <li>UDYAM Registration: UDYAM-DL-10-0098630</li>
+                    <li>Professional team of certified electricians</li>
+                    <li>Commitment to quality and safety</li>
+                    <li>Customer satisfaction rating of 4.9/5</li>
+                    <li>24/7 emergency service availability</li>
+                </ul>
+            </div>
+
+            <div class="two-column">
+                <div class="column">
+                    <h3 style="margin-top: 0;">Our Team</h3>
+                    <p>Our experienced team of certified electricians and technical experts is dedicated to delivering exceptional service with attention to detail and customer satisfaction. All technicians undergo continuous training in modern electrical standards and safety protocols.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>50+ Certified Electricians</li>
+                        <li>Continuous training programs</li>
+                        <li>Modern safety protocols</li>
+                        <li>Customer satisfaction focus</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3 style="margin-top: 0;">Service Areas</h3>
+                    <p>We offer direct, 24/7 services across Delhi NCR with our own certified team. For larger projects, our verified partner network extends our reach across India.</p>
+                    <div style="margin-top: 1rem;">
+                        <div class="badge accent">Delhi</div>
+                        <div class="badge accent">Noida</div>
+                        <div class="badge accent">Gurgaon</div>
+                        <div class="badge accent">Ghaziabad</div>
+                        <div class="badge accent">Faridabad</div>
+                        <div class="badge accent">Pan-India</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Our Commitment</h3>
+            <div class="info-section">
+                <p><strong>Expert Repair & Troubleshooting:</strong> From faulty switchboards to complex wiring issues, our technicians diagnose and fix problems with precision and safety.</p>
+                <p style="margin-top: 1rem;"><strong>Clean & Professional Installations:</strong> We handle all new installations, including fans, lights, geysers, and ACs, ensuring a perfect setup every time.</p>
+                <p style="margin-top: 1rem;"><strong>24/7 Emergency Electrical Service:</strong> Power outage? Short circuit? Our emergency team is available around the clock to restore safety and power.</p>
+                <p style="margin-top: 1rem;"><strong>Safe & Secure Wiring Solutions:</strong> From a single point to a full-house rewiring, our experts ensure every connection is safe and built to last.</p>
+                <p style="margin-top: 1rem;"><strong>Professional Grade Tools & Materials:</strong> We use only the best, ISI-certified materials and professional-grade tools.</p>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <h2>Reviews & Ratings</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Trusted by 30,000+ Customers | Google Verified 4.9★ Rating</p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Technician arrived within 20 minutes for emergency MCB issue. Professional work, transparent pricing. Highly recommend HSES for any electrical work."</div>
+                    <div class="testimonial-author">— Rajesh Sharma, Janakpuri</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Best smart home automation experience in Delhi. Team was knowledgeable, equipment was premium quality. Worth every rupee."</div>
+                    <div class="testimonial-author">— Priya Malhotra, Dwarka</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Complete office rewiring done professionally. No hidden charges, work completed on time. This is how electrical service should be."</div>
+                    <div class="testimonial-author">— Amit Kumar, Gurgaon</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--text-light);">Read 500+ More Reviews on Google</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>What areas do you service?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    We offer direct services across Delhi NCR (Delhi, Noida, Gurgaon, Ghaziabad, Faridabad) with our own team. For larger pan-India projects, we work through verified partner networks to ensure HSES quality standards are maintained.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>Are you available 24/7?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, emergency services are available 24/7. Our response time is 30-60 minutes across Delhi NCR for emergency situations like power outages and short circuits.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>Do you provide warranty?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we provide 1-year warranty on all services. This covers workmanship and ensures quality for your peace of mind.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>What are your visiting charges?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    A mandatory, non-refundable visiting charge of ₹300 applies for inspection and diagnosis. This ensures our technicians provide an honest, accurate quote without sales pressure.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>Do you charge advance payment?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    NO advance payment required. Pay only after work completion and your satisfaction. We accept Cash, UPI, and Card payments.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>Are your technicians certified?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, all our technicians are professionally trained and certified. They undergo continuous training in modern electrical standards and safety protocols.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>What payment options do you accept?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    We accept Cash, UPI, and Card payments. Payment is made only after the work is completed and you're satisfied with the service.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <div class="faq-question">
+                    <span>How do I book your services?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    You can book our services by calling +91 7827817295, WhatsApp us, or visiting our website. Just choose your service, share your details, and we'll confirm the appointment. Our experts will arrive within the promised timeframe.
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety & Legal Section -->
+        <section>
+            <h2>Safety & Privacy</h2>
+            <div class="disclaimer">
+                <h4>Important Safety Information</h4>
+                <ul>
+                    <li>NEVER asks for OTP, UPI PIN, or Card details</li>
+                    <li>We only need Name, Phone, Address & Work details</li>
+                    <li>Verify you're contacting official HSES to avoid fraud</li>
+                    <li>Always deal through official channels</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3 style="margin-top: 0;">Quick Booking Process</h3>
+                <ol style="padding-left: 1.5rem;">
+                    <li>Choose Service</li>
+                    <li>Share Details</li>
+                    <li>Get Confirmed</li>
+                    <li>Expert Arrives</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p style="opacity: 0.9; margin-bottom: 2rem;">Have a question or need immediate assistance? Contact us through your preferred method.</p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="icon">📞</div>
+                    <h4>Call Us</h4>
+                    <a href="tel:+917827817295">+91 7827817295</a>
+                    <p style="opacity: 0.8; margin-top: 0.5rem;">Available 24/7</p>
+                </div>
+                <div class="contact-method">
+                    <div class="icon">💬</div>
+                    <h4>WhatsApp Us</h4>
+                    <a href="https://wa.me/917827817295">Direct Message</a>
+                    <p style="opacity: 0.8; margin-top: 0.5rem;">Quick Response</p>
+                </div>
+                <div class="contact-method">
+                    <div class="icon">📧</div>
+                    <h4>Email Us</h4>
+                    <a href="mailto:hses247help@gmail.com">hses247help@gmail.com</a>
+                    <p style="opacity: 0.8; margin-top: 0.5rem;">Detailed Enquiries</p>
+                </div>
+                <div class="contact-method">
+                    <div class="icon">🌐</div>
+                    <h4>Website</h4>
+                    <a href="https://hses247help.com">hses247help.com</a>
+                    <p style="opacity: 0.8; margin-top: 0.5rem;">Full Information</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px;">
+                <h3 style="color: var(--white); margin-bottom: 1rem;">Quick Booking</h3>
+                <p style="opacity: 0.9; margin-bottom: 1rem;">Need a reliable electrician now? Choose your service and get an expert at your doorstep—fast, easy, and hassle-free.</p>
+                <a href="tel:+917827817295" class="btn btn-primary" style="margin-right: 1rem;">Call Now</a>
+                <a href="https://wa.me/917827817295" class="btn btn-primary">WhatsApp Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About HSES™</a></li>
+                    <li><a href="#reviews">Customer Reviews</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#">Why Choose Us</a></li>
+                    <li><a href="#">Our Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">All Services & Pricing</a></li>
+                    <li><a href="#contact">Emergency Services</a></li>
+                    <li><a href="#">AMC Plans</a></li>
+                    <li><a href="#">Paid Consultation</a></li>
+                    <li><a href="#">Smart Home</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">Service Locations</a></li>
+                    <li><a href="#">Get Client ID</a></li>
+                    <li><a href="#">Become a Partner</a></li>
+                    <li><a href="#">Share & Earn</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Payment Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                    <li><a href="#">Customer Protection</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+917827817295">📞 +91 7827817295</a></li>
+                    <li><a href="mailto:hses247help@gmail.com">📧 hses247help@gmail.com</a></li>
+                    <li><a href="https://wa.me/917827817295">💬 WhatsApp Us</a></li>
+                    <li><a href="https://hses247help.com">🌐 Website</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2012–2026 HSES Connect™. A Division of Hasan Smart Electrical Solutions®.</p>
+            <p style="margin-top: 0.5rem;">Powering Trust Since 2012 ⚡ | UDYAM: UDYAM-DL-10-0098630 | MSME Certified | Govt. Verified</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">All Rights Reserved. Unauthorized reproduction or distribution is strictly prohibited.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.remove('active');
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.querySelector('.faq-answer');
+            const question = element.querySelector('.faq-question span:last-child');
+            
+            // Close other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== element) {
+                    item.querySelector('.faq-answer').classList.remove('show');
+                    item.querySelector('.faq-question span:last-child').textContent = '▼';
+                }
+            });
+
+            // Toggle current FAQ
+            answer.classList.toggle('show');
+            question.textContent = answer.classList.contains('show') ? '▲' : '▼';
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
